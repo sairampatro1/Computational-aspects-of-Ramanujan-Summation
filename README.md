@@ -67,4 +67,4 @@ This project is licensed under the MIT License.
 
 ## Contact
 
-For questions or issues, please open an issue on this repository or contact [Your Name] at [Your Email].
+For questions or issues, please open an issue on this repository or contact Sairam Babula Patro at sairam.patro@tum.de
