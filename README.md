@@ -1,70 +1,78 @@
-# Computational-aspects-of-Ramanujan-Summation
-# Infinite Series Summation using Tail Approximations
+# Computational Aspects of Ramanujan Summation
 
-This repository contains a Julia notebook that demonstrates the computation of infinite series sums using Euler-Maclaurin (for non-alternating series) and Euler-Boole (for alternating series) tail approximations. The notebook includes examples showcasing the summation of different infinite series, along with plots to analyze the error relative to the number of correction terms used in the approximation.
+This repository contains a Julia notebook demonstrating the computational aspects of Ramanujan summation using tail approximations. The notebook explores infinite series summation with Euler-Maclaurin (for non-alternating series) and Euler-Boole (for alternating series) methods, alongside computing Ramanujan constants for various series types. It is designed for academic purposes, particularly as part of a thesis.
 
 ## Features
 
-- Computes infinite series sums using tail approximations.
-- Supports both non-alternating and alternating series.
-- Provides error analysis through plots of `log10(|error|)` vs. the number of correction terms (`m`).
-- Utilizes high-precision arithmetic for accurate results.
+- **Infinite Series Summation**:
+  - Euler-Maclaurin tail approximations for non-alternating series.
+  - Euler-Boole tail approximations for alternating series.
+  - Error analysis via plots of `log10(|error|)` vs. number of correction terms (`m`).
+
+- **Ramanujan Constants**:
+  - Computation for general series (e.g., `x^n`), alternating series (e.g., `-exp(x)`), binary series (e.g., `2^(-n)`), exponential series (e.g., `e^x`), and Euler-type series (e.g., with gamma functions).
+  - Includes illustrative examples with numerical outputs.
+
+- **High-Precision Computations**:
+  - Uses `setprecision(256)` for accurate results.
 
 ## Requirements
 
-- [Julia](https://julialang.org/downloads/) (version 1.6 or later) - Must be installed to run the code.
+- [Julia](https://julialang.org/downloads/) (version 1.6 or later)
 - [Jupyter](https://jupyter.org/install) (for interactive notebook execution)
+
+### Required Julia Packages
+- `SymPy`
+- `Plots`
+- `Printf`
+- `SpecialFunctions`
+- `IJulia` (for Jupyter kernel)
 
 ## Installation
 
-1. **Install Julia**: Download and install Julia from the [official website](https://julialang.org/downloads/). Ensure you have version 1.6 or later.
-
-2. **Install Required Packages**: Open a Julia REPL and run the following commands to install the necessary packages:
+1. **Install Julia**: Download and install from the [official website](https://julialang.org/downloads/) (version 1.6+ recommended).
+2. **Install Jupyter**: Follow instructions at [jupyter.org/install](https://jupyter.org/install).
+3. **Install Julia Packages**: Open a Julia REPL and run:
    ```julia
    using Pkg
    Pkg.add("SymPy")
    Pkg.add("Plots")
    Pkg.add("Printf")
    Pkg.add("SpecialFunctions")
-   Pkg.add("IJulia")  # For Jupyter kernel
+   Pkg.add("IJulia")
    ```
-
-3. **Set Up Jupyter**: If you haven't already, install Jupyter. Then, ensure the Julia kernel is available by running `Pkg.add("IJulia")` as above.
+4. **Set Up Julia Kernel**: Ensure Jupyter recognizes Julia via `IJulia`.
 
 ## Usage
 
-1. **Open the Notebook**: Launch Jupyter and open the provided notebook file (`infinite_series_summation.ipynb`).
+1. **Open the Notebook**: Launch Jupyter, navigate to this repository, and open `computational_aspects_ramanujan_summation.ipynb`.
+2. **Run Cells**: Execute cells sequentially to compute sums and Ramanujan constants. Outputs include numerical results and error plots.
+3. **View Plots**: Plots are saved in a `plots` folder in the repository directory.
 
-2. **Run the Cells**: Execute the cells one by one to see the results for each example. Each example computes the sum of an infinite series using tail approximations and displays a plot of the error versus the number of correction terms.
+### Examples in the Notebook
+- **Series Summation**: Computes sums like `(-1)^n / sqrt(n)` ≈ -0.60490 with error plots.
+- **Ramanujan Constants**: 
+  - General series: `x^n` for `n = 1 to 10`.
+  - Alternating series: `-1`, `-x`, `-x^3`, `-exp(x)`, `-2^(-x)`.
+  - Binary series: `C(2^-n;0)`.
+  - Exponential series: `e^(x-1)`, `e^x`.
+  - Euler-type series: `gamma(α + 1) / (gamma(x) * gamma(α - x + 2))` for varying `α`.
 
-3. **Interpret the Results**: The plots show how the approximation error decreases as more correction terms are included. The numerical outputs provide the approximated sum and the corresponding error for different values of `m`.
+## Code Structure
 
-## Examples
-
-The notebook includes examples such as:
-- Summation of `(-1)^n / sqrt(n)` ≈ -0.60490 (alternating series).
-- Summation of `1/n` (non-alternating, divergent series approximated with Euler-Maclaurin).
-- Additional examples can be added by defining new series functions and calling the `run_example` function.
-
-## Module Overview
-
-The code is organized into a module named `Analytictail`, which contains functions for:
-- Computing Bernoulli numbers and Euler polynomials with caching.
-- Calculating tail approximations using Euler-Maclaurin and Euler-Boole methods.
-- Summing the series with partial sums and tail corrections.
-- Plotting the error versus the number of correction terms.
-
-You can reuse or extend this module in your own projects by importing it and utilizing its functions.
+The notebook defines a module `Analytictail` with functions for:
+- Computing Bernoulli numbers and Euler polynomials (cached).
+- Tail approximations (Euler-Maclaurin and Euler-Boole).
+- Series summation combining partial sums and tails.
+- Error plotting against correction terms.
+- Ramanujan constant calculations for diverse series types.
 
 ## Notes
 
-- The computations use high-precision arithmetic (`setprecision(256)`) to ensure accuracy, which may result in slower execution times.
-- The plotting backend is set to GR (`gr()`). If you encounter issues, ensure that the GR backend is properly installed and configured.
+- **Precision**: High-precision arithmetic (`setprecision(256)`) may slow execution but ensures accuracy.
+- **Plotting**: Uses GR backend (`gr()`); ensure compatibility if issues arise.
+- **Limitations**: Some symbolic computations may fail (e.g., `NaN` for `α = -1.0` in gamma example).
 
 ## License
 
-This project is licensed under the MIT License.
-
-## Contact
-
-For questions or issues, please open an issue on this repository or contact Sairam Babula Patro at sairam.patro@tum.de
+This project is for academic purposes as part of a thesis on Ramanujan summation computational aspects.
