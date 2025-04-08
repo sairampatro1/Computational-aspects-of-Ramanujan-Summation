@@ -51,7 +51,7 @@ This repository contains a Julia notebook demonstrating the computational aspect
 
 ## Code Structure
 
-The notebook defines a module `Analytictail` with functions for:
+The notebook defines a module `Errorplot` with functions for:
 - Computing Bernoulli numbers and Euler polynomials (cached).
 - Tail approximations (Euler-Maclaurin and Euler-Boole).
 - Series summation combining partial sums and tails.
