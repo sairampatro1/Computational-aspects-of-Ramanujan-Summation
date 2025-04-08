@@ -49,15 +49,6 @@ This repository contains a Julia notebook demonstrating the computational aspect
 2. **Run Cells**: Execute cells sequentially to compute sums and Ramanujan constants. Outputs include numerical results and error plots.
 3. **View Plots**: Plots are saved in a `plots` folder in the repository directory.
 
-### Examples in the Notebook
-- **Series Summation**: Computes sums like `(-1)^n / sqrt(n)` ≈ -0.60490 with error plots.
-- **Ramanujan Constants**: 
-  - General series: `x^n` for `n = 1 to 10`.
-  - Alternating series: `-1`, `-x`, `-x^3`, `-exp(x)`, `-2^(-x)`.
-  - Binary series: `C(2^-n;0)`.
-  - Exponential series: `e^(x-1)`, `e^x`.
-  - Euler-type series: `gamma(α + 1) / (gamma(x) * gamma(α - x + 2))` for varying `α`.
-
 ## Code Structure
 
 The notebook defines a module `Analytictail` with functions for:
