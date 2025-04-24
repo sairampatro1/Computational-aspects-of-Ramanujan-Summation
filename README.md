@@ -10,7 +10,7 @@ This repository contains a Julia notebook demonstrating the computational aspect
   - Error analysis via plots of `log10(|error|)` vs. number of correction terms (`m`).
 
 - **Ramanujan Constants**:
-  - Computation for general series (e.g., `x^n`), alternating series (e.g., `-exp(x)`), binary series (e.g., `2^(-n)`), exponential series (e.g., `e^x`), and Euler-type series (e.g., with gamma functions).
+  - Computation for general series (e.g., `x^n`), alternating series (e.g., `-exp(x)`), geometric series (e.g., `2^(-n)`), exponential series (e.g., `e^x`), and Euler-type series (e.g., with gamma functions).
   - Includes illustrative examples with numerical outputs.
 
 - **High-Precision Computations**:
@@ -62,7 +62,6 @@ The notebook defines a module `Errorplot` with functions for:
 
 - **Precision**: High-precision arithmetic (`setprecision(256)`) may slow execution but ensures accuracy.
 - **Plotting**: Uses GR backend (`gr()`); ensure compatibility if issues arise.
-- **Limitations**: Some symbolic computations may fail (e.g., `NaN` for `α = -1.0` in gamma example).
 
 ## License
 
